@@ -1,0 +1,39 @@
+:root {
+  --background: #292929;
+  --background-light: #5252525d;
+  --background-dark: #1f1f1f;
+  --yellow: #ffce00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-dark);
+}
+
+body,
+input {
+  font: 20px 'Helvetica Neue', Arial, sans-serif;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.App {
+  width: 375px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: var(--background);
+}

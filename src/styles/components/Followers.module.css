@@ -1,0 +1,49 @@
+.li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 0;
+  position: relative;
+  border-bottom: 1px solid rgb(54, 54, 54);
+}
+
+.li:hover {
+  cursor: pointer;
+}
+
+.li::before {
+  content: '';
+  background: var(--yellow);
+  width: 20px;
+  height: 42px;
+  display: block;
+  border-radius: 100px;
+  position: absolute;
+  left: -10px;
+}
+
+.avatar {
+  width: 64px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.li:hover .name {
+  color: var(--yellow);
+}
+
+.li span img {
+  filter: invert(1);
+  width: 15px;
+  transition: 0.2s;
+}
+
+.li:hover span img {
+  transform: translateX(3px);
+}

@@ -1,0 +1,80 @@
+.header,
+.followers,
+.following,
+.repos {
+  height: 75px;
+  background: var(--background-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.repos p,
+.following p {
+  margin-left: 90px;
+}
+
+.followers {
+  justify-content: initial;
+}
+
+.userProfile a,
+.repos a,
+.followers a {
+  transition: 0.2s;
+}
+
+.userProfile a:hover,
+.repos a:hover,
+.followers a:hover {
+  transform: translateX(-2px);
+}
+
+.userProfile a img,
+.repos a img,
+.followers a img {
+  width: 18px;
+  height: 18px;
+}
+
+.repos p,
+.followers p,
+.following p {
+  margin-left: 91px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.name {
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: 1px solid var(--yellow);
+}
+
+.icon {
+  transition: 0.2s;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+
+.button:hover .icon {
+  transform: translateX(2px);
+}

@@ -1,0 +1,45 @@
+.nav {
+  height: 80px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  width: 375px;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: 0;
+}
+
+.home,
+.repos,
+.followers,
+.followings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav img {
+  width: 30px;
+}
+
+.nav a {
+  color: black;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nav a.active {
+  opacity: 1;
+}

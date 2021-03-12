@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Followers from './components/Followers';
+import Following from './components/Following';
+import ProtectedRoute from './components/Helper/ProtectedRoute';
+import Login from './components/Login';
+import MyProfile from './components/MyProfile';
+import Repos from './components/Repos';
+import UserProfile from './components/UserProfile';
+
+import './styles/global.css';
+import { UserStorage } from './UserContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <UserStorage>
+          <Routes>
+            <Route path="/" exact element={<Login />} />
+            <ProtectedRoute path="profile" element={<MyProfile />} />
+            <ProtectedRoute
+              path="profile/:username"
+              element={<UserProfile />}
+            />
+            <ProtectedRoute path="profile/followers" element={<Followers />} />
+            <ProtectedRoute path="profile/following" element={<Following />} />
+
+            <ProtectedRoute path="profile/repos" element={<Repos />} />
+          </Routes>
+        </UserStorage>
+      </BrowserRouter>
     </div>
   );
 }

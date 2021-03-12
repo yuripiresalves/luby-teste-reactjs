@@ -1,0 +1,101 @@
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    180deg,
+    var(--background-dark) 0px,
+    var(--background-dark) 50%,
+    var(--background) 100%
+  );
+}
+
+.imgContainer img {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.info,
+.bioContainer {
+  margin-top: 45px;
+  margin-left: 28px;
+}
+.name {
+  position: relative;
+  font-size: 26px;
+  padding-right: 20px;
+}
+
+.name::before,
+.bioTitle::before {
+  content: '';
+  background: var(--yellow);
+  width: 20px;
+  height: 42px;
+  display: block;
+  border-radius: 100px;
+  position: absolute;
+  left: -38px;
+  top: -7px;
+}
+
+.email,
+.location {
+  font-size: 18px;
+}
+
+.numbersContainer {
+  margin-top: 44px;
+  background: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 40px;
+}
+
+.followers,
+.following,
+.repos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.followers:hover,
+.following:hover,
+.repos:hover {
+  color: var(--yellow);
+}
+
+.followers h1,
+.following h1,
+.repos h1 {
+  font-size: 40px;
+}
+
+.followers p,
+.following p,
+.repos p {
+  font-size: 17px;
+}
+
+.bioContainer {
+  margin-bottom: 110px;
+}
+
+.bioTitle {
+  position: relative;
+}
+
+.bio {
+  margin: 15px 0 70px 0;
+  font-size: 18px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  padding-right: 20px;
+}
