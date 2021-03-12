@@ -16,7 +16,10 @@ export const UserStorage = ({ children }) => {
         const response = await fetch(
           `https://api.github.com/users/${username}`
         );
-        if (!response.ok) throw new Error();
+        if (!response.ok) {
+          setError('Usuário inválido');
+          return error;
+        }
 
         const json = await response.json();
         window.localStorage.setItem('github_username', json.login);
@@ -28,7 +31,7 @@ export const UserStorage = ({ children }) => {
         setError(err);
       }
     },
-    [navigate]
+    [navigate, error]
   );
 
   async function userLogout() {
@@ -53,7 +56,7 @@ export const UserStorage = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ userLogin, userLogout, data, error, isLogged }}
+      value={{ userLogin, userLogout, data, error, setError, isLogged }}
     >
       {children}
     </UserContext.Provider>

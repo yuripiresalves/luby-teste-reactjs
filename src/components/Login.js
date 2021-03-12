@@ -5,21 +5,13 @@ import Error from './Helper/Error';
 
 function Login() {
   const [username, setUsername] = useState('');
-  const [error, setError] = useState(null);
 
-  const { userLogin } = useContext(UserContext);
+  const { userLogin, error, setError } = useContext(UserContext);
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    if (!username) {
-      setError('Campo obrigatório');
-      const inputElement = document.querySelector('input');
-      inputElement.style.boxShadow =
-        '0 0 0 3px var(--background), 0 0 0 4px #EB2D2D';
-      inputElement.focus();
-    }
-
     userLogin(username);
+    setUsername('');
   }
 
   function handleChange({ target }) {
@@ -36,7 +28,12 @@ function Login() {
       </header>
 
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input type="text" placeholder="Usuário" onChange={handleChange} />
+        <input
+          type="text"
+          placeholder="Usuário"
+          value={username}
+          onChange={handleChange}
+        />
 
         {error && <Error error={error} />}
 
