@@ -12,7 +12,6 @@ function MyProfile() {
 
   const {
     avatar_url,
-    name,
     email,
     location,
     followers,
@@ -21,7 +20,14 @@ function MyProfile() {
     bio,
   } = data;
 
-  const names = name.split(' ');
+  let { name } = data;
+
+  let names = ['UsuárioSemNome'];
+
+  if (name) {
+    names = name.split(' ');
+  } else name = 'Usuário sem nome';
+
   const firstName = names[0];
   const lastName = names[names.length - 1];
 
@@ -29,7 +35,7 @@ function MyProfile() {
     <>
       <Header id="myProfile">
         <header className={stylesHeader.header}>
-          {name && (
+          {names && (
             <p className={stylesHeader.name}>
               #{`${firstName}${lastName === firstName ? '' : `.${lastName}`}`}
             </p>
