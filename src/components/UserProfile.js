@@ -6,6 +6,7 @@ import styleHeader from '../styles/components/Header.module.css';
 import { Link, useParams } from 'react-router-dom';
 import NavigationTab from './NavigationTab';
 import { UserContext } from '../UserContext';
+import Head from './Helper/Head';
 
 function UserProfile() {
   const [data, setData] = useState(null);
@@ -29,6 +30,7 @@ function UserProfile() {
 
   return (
     <>
+      <Head title={`${username} - Perfil`} />
       <Header id="userProfile">
         <header className={styleHeader.header}>
           <Link to="/profile">

@@ -6,10 +6,11 @@ import NavigationTab from './NavigationTab';
 import styles from '../styles/components/Followers.module.css';
 import styleHeader from '../styles/components/Header.module.css';
 import { Link } from 'react-router-dom';
+import Head from './Helper/Head';
 
 function Followers() {
   const { data } = useContext(UserContext);
-  const { followers_url, followers } = data;
+  const { followers_url, followers, login } = data;
   const [followersList, setFollowersList] = useState([]);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function Followers() {
 
   return (
     <>
+      <Head title={`${login} - Seguidores`} />
       <Header id="followers">
         <header className={styleHeader.followers}>
           <Link to="/profile">

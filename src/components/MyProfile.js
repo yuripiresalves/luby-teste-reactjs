@@ -6,6 +6,7 @@ import styles from '../styles/components/Profile.module.css';
 import stylesHeader from '../styles/components/Header.module.css';
 import { Link } from 'react-router-dom';
 import NavigationTab from './NavigationTab';
+import Head from './Helper/Head';
 
 function MyProfile() {
   let { data, userLogout } = useContext(UserContext);
@@ -18,6 +19,7 @@ function MyProfile() {
     following,
     public_repos,
     bio,
+    login,
   } = data;
 
   let { name } = data;
@@ -33,6 +35,7 @@ function MyProfile() {
 
   return (
     <>
+      <Head title={`${login} - Meu perfil`} />
       <Header id="myProfile">
         <header className={stylesHeader.header}>
           {names && (

@@ -6,6 +6,7 @@ import NavigationTab from './NavigationTab';
 import styles from '../styles/components/Following.module.css';
 import styleHeader from '../styles/components/Header.module.css';
 import { Link } from 'react-router-dom';
+import Head from './Helper/Head';
 
 function Following() {
   const { data } = useContext(UserContext);
@@ -25,6 +26,7 @@ function Following() {
 
   return (
     <>
+      <Head title={`${login} - Seguindo`} />
       <Header id="following">
         <header className={styleHeader.following}>
           <Link to="/profile">

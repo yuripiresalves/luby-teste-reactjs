@@ -6,10 +6,11 @@ import NavigationTab from './NavigationTab';
 import styles from '../styles/components/Repos.module.css';
 import stylesHeader from '../styles/components/Header.module.css';
 import { Link } from 'react-router-dom';
+import Head from './Helper/Head';
 
 function Repos() {
   const { data } = useContext(UserContext);
-  const { repos_url, public_repos } = data;
+  const { repos_url, public_repos, login } = data;
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function Repos() {
 
   return (
     <>
+      <Head title={`${login} - Repositórios`} />
       <Header id="repos">
         <header className={stylesHeader.repos}>
           <Link to="/profile">
